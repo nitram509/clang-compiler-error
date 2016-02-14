@@ -5,6 +5,17 @@
 
 Filled as bug #24643919.
 
+## Update #1
+
+After really interesting and valuable discussion on Twitter
+with [Duncan Ogilvie](https://twitter.com/mrexodia) and [@sghctoma](https://twitter.com/sghctoma)
+here are some more facts:
+
+* It's obvious, that there is a 'warning' in the c++ code. A missing return statement leads to undefined behavior. So the compiler can decide to return anything to the caller. A.k.a. undefined behavior can mean anything.
+* In the second function the call to set_value() is replaced (via optimizer) with a JMP instruction. Thus the RET within set_value() will return something to the caller.
+* On Windows, clang 3.7.1 kept the if-null check in the code, also when using -O1 or -O2. Additionally the executable crashes.
+* The if(new x) behavior is weird, one should remove the other though, there it takes rax (but its undefined behavior).
+
 ### Description
 
 When compiling c++ code, clang is able to optimize code.
