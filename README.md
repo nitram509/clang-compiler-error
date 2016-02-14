@@ -7,7 +7,7 @@ Filled as bug #24643919.
 
 ## Update #1
 
-After really interesting and valuable discussion on Twitter
+After a really interesting and valuable discussion on Twitter
 with [Duncan Ogilvie](https://twitter.com/mrexodia) and [@sghctoma](https://twitter.com/sghctoma)
 here are some more facts:
 
